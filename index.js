@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const { exec } = require('child_process');
 
 // Ganti dengan token bot Telegram Anda
-const token = '7054184187:AAGHpr4tpnFL_2h8fBwNxQbxP7pJDyvKzmw';
+const token = '6450904676:AAGuZ6galyaybDJwdn5iZyrCVhUSVLvYMk8';
 
 // Inisialisasi bot dengan token
 const bot = new TelegramBot(token, { polling: true });
@@ -15,7 +15,7 @@ function logActivity(msg) {
 
   console.log(`Aktivitas Penggunaan Bot Telegram`);
   console.log(`• User ID: ${user.id}`);
-  console.log(`• Username: ${user.username || 'Tidak ada'}`);
+  console.log(`• Username: ${user.username || 'Not Found!'}`);
   console.log(`• Chat ID: ${chat.id}`);
   console.log(`• Perintah: ${command}`);
 }
@@ -53,11 +53,11 @@ bot.on('message', (msg) => {
         }
         // Menampilkan output stdout jika berhasil
         console.log(`stdout: ${stdout}`);
-        bot.sendMessage(chatId, 'Proses telah dimulai.');
+        bot.sendMessage(chatId, 'The process has started.');
       });
     } else {
       // Memberi tahu pengguna bahwa format pesan tidak benar
-      bot.sendMessage(chatId, 'Format pesan tidak benar. Gunakan format: /mix [url] [time] [thread] [rate]');
+      bot.sendMessage(chatId, 'The message format is incorrect. Use formatting : /mix [url] [time] [thread] [rate]');
     }
   }
 });
